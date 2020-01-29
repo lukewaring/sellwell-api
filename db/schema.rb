@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_165843) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name"
     t.string "industry"
     t.string "website"

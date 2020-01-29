@@ -6,22 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Destroying Account and Contact seed data'
+# puts 'Destroying users, accounts and contacts'
 
-Account.destroy_all
-Contact.destroy_all
+# User.destroy_all
+# Account.destroy_all
+# Contact.destroy_all
 
-puts 'Creating User, Account and Contact seed data'
+# puts 'Creating users, accounts and contacts'
 
-User.create(name: 'Luke Waring', email: 'lukewaring@gmail.com')
+# User.create(name: 'Luke Waring', email: 'lukewaring@gmail.com')
 
-25.times do
-  Account.create(
-    name: Faker::Company.name,
-    industry: Faker::Company.industry,
-    website: Faker::Internet.url
-  )
-end
+# 25.times do
+#   Account.create(
+#     user_id: 2,
+#     name: Faker::Company.name,
+#     industry: Faker::Company.industry,
+#     website: Faker::Internet.url
+#   )
+# end
 
 25.times do
     Contact.create(
