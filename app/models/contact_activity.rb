@@ -1,0 +1,2 @@
+class ContactActivity < ApplicationRecord
+end

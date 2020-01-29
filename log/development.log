@@ -35,3 +35,451 @@ puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
 puma (4.3.1) lib/puma/server.rb:472:in `process_client'
 puma (4.3.1) lib/puma/server.rb:328:in `block in run'
 puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200129161515)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200129161515)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200129161515)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200129161515)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200129161515)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129161515"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (12.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-29 16:31:45.898206"], ["updated_at", "2020-01-29 16:31:45.898206"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-01-29 11:33:16 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/lukewaring/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/lukewaring/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 316)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 1602)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-01-29 11:33:16 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAccounts (20200129163456)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "name" character varying, "industry" character varying, "website" character varying, "notes" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129163456"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOpportunities (20200129164012)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "opportunities" ("id" bigserial primary key, "account_id" integer, "name" character varying, "open_date" date, "close_date" date, "stage" character varying, "value" integer, "priority" character varying, "notes" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129164012"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivities (20200129164352)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivities (20200129164352)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "activities" ("id" bigserial primary key, "opportunity_id" integer, "name" character varying, "date" date, "notes" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129164352"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20200129164710)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" bigserial primary key, "account_id" integer, "name" character varying, "title" character varying, "phone" character varying, "email" character varying, "notes" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129164710"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContactOpportunities (20200129165058)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "contact_opportunities" ("id" bigserial primary key, "contact_id" integer, "opportunity_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129165058"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3794130007238746560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContactActivities (20200129165843)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "contact_activities" ("id" bigserial primary key, "contact_id" integer, "activity_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200129165843"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3794130007238746560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Luke Waring"], ["email", "lukewaring@gmail.com"], ["created_at", "2020-01-29 17:25:50.044544"], ["updated_at", "2020-01-29 17:25:50.044544"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Abshire LLC"], ["industry", "Architecture & Planning"], ["website", "http://rogahnstehr.net/jenni"], ["created_at", "2020-01-29 17:25:51.070857"], ["updated_at", "2020-01-29 17:25:51.070857"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Heidenreich-Cronin"], ["industry", "Plastics"], ["website", "http://prohaska.org/kristofer"], ["created_at", "2020-01-29 17:25:51.081830"], ["updated_at", "2020-01-29 17:25:51.081830"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Luettgen-Hessel"], ["industry", "Professional Training & Coaching"], ["website", "http://gradyhartmann.co/caleb"], ["created_at", "2020-01-29 17:25:51.091408"], ["updated_at", "2020-01-29 17:25:51.091408"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Weimann, Roberts and Corwin"], ["industry", "Packaging and Containers"], ["website", "http://cormier.com/chet"], ["created_at", "2020-01-29 17:25:51.096009"], ["updated_at", "2020-01-29 17:25:51.096009"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ullrich-Jones"], ["industry", "Human Resources"], ["website", "http://kihndicki.info/maxwell"], ["created_at", "2020-01-29 17:25:51.100001"], ["updated_at", "2020-01-29 17:25:51.100001"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Leuschke Inc"], ["industry", "Business Supplies and Equipment"], ["website", "http://grantstoltenberg.org/myrl"], ["created_at", "2020-01-29 17:25:51.103905"], ["updated_at", "2020-01-29 17:25:51.103905"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Windler, Koss and Kemmer"], ["industry", "Dairy"], ["website", "http://connelly.name/milagro"], ["created_at", "2020-01-29 17:25:51.107669"], ["updated_at", "2020-01-29 17:25:51.107669"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Schiller, Jast and Langosh"], ["industry", "Wireless"], ["website", "http://rippin.net/tanner.wilderman"], ["created_at", "2020-01-29 17:25:51.111427"], ["updated_at", "2020-01-29 17:25:51.111427"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Harris, Collins and Gleason"], ["industry", "Events Services"], ["website", "http://rowe.net/ayesha"], ["created_at", "2020-01-29 17:25:51.115102"], ["updated_at", "2020-01-29 17:25:51.115102"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Marquardt Inc"], ["industry", "Information Services"], ["website", "http://kuhic.io/my_schamberger"], ["created_at", "2020-01-29 17:25:51.118829"], ["updated_at", "2020-01-29 17:25:51.118829"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rice-Wiza"], ["industry", "Architecture & Planning"], ["website", "http://zieme.com/quinton"], ["created_at", "2020-01-29 17:25:51.122714"], ["updated_at", "2020-01-29 17:25:51.122714"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "O'Hara, Hickle and Schmeler"], ["industry", "Wholesale"], ["website", "http://barrows.name/joel.connelly"], ["created_at", "2020-01-29 17:25:51.126725"], ["updated_at", "2020-01-29 17:25:51.126725"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hickle Group"], ["industry", "Mechanical or Industrial Engineering"], ["website", "http://beatty.name/thaddeus"], ["created_at", "2020-01-29 17:25:51.130885"], ["updated_at", "2020-01-29 17:25:51.130885"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Feil-Fay"], ["industry", "Plastics"], ["website", "http://tillman.net/demetra"], ["created_at", "2020-01-29 17:25:51.134753"], ["updated_at", "2020-01-29 17:25:51.134753"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Carroll, Dickinson and Dooley"], ["industry", "Computer & Network Security"], ["website", "http://feeneyspinka.info/tawnya"], ["created_at", "2020-01-29 17:25:51.138745"], ["updated_at", "2020-01-29 17:25:51.138745"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Russel and Sons"], ["industry", "Animation"], ["website", "http://schoen.net/anton.larson"], ["created_at", "2020-01-29 17:25:51.142644"], ["updated_at", "2020-01-29 17:25:51.142644"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jakubowski, Bednar and Bosco"], ["industry", "Information Technology and Services"], ["website", "http://schummjerde.org/kyle"], ["created_at", "2020-01-29 17:25:51.146290"], ["updated_at", "2020-01-29 17:25:51.146290"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cassin, Kunde and Russel"], ["industry", "Fishery"], ["website", "http://mills.co/kecia_koch"], ["created_at", "2020-01-29 17:25:51.149843"], ["updated_at", "2020-01-29 17:25:51.149843"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Schmidt-Abernathy"], ["industry", "Medical Practice"], ["website", "http://rosenbaum.org/dotty"], ["created_at", "2020-01-29 17:25:51.153578"], ["updated_at", "2020-01-29 17:25:51.153578"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hoeger-Nicolas"], ["industry", "Legislative Office"], ["website", "http://trantow.co/windy.crooks"], ["created_at", "2020-01-29 17:25:51.157569"], ["updated_at", "2020-01-29 17:25:51.157569"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Carter and Sons"], ["industry", "Environmental Services"], ["website", "http://haag.co/pablo.ziemann"], ["created_at", "2020-01-29 17:25:51.161543"], ["updated_at", "2020-01-29 17:25:51.161543"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dickinson, Wiegand and Rolfson"], ["industry", "Shipbuilding"], ["website", "http://kuphal.com/alex"], ["created_at", "2020-01-29 17:25:51.165411"], ["updated_at", "2020-01-29 17:25:51.165411"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dibbert, Hintz and Schaden"], ["industry", "Hospitality"], ["website", "http://mraz.name/garth_cronin"], ["created_at", "2020-01-29 17:25:51.169413"], ["updated_at", "2020-01-29 17:25:51.169413"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mills, Marquardt and Hills"], ["industry", "Alternative Medicine"], ["website", "http://kshlerin.net/carlos"], ["created_at", "2020-01-29 17:25:51.173410"], ["updated_at", "2020-01-29 17:25:51.173410"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("name", "industry", "website", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ferry-Waelchi"], ["industry", "Photography"], ["website", "http://runolfsdottir.co/jarvis"], ["created_at", "2020-01-29 17:25:51.177321"], ["updated_at", "2020-01-29 17:25:51.177321"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 6], ["name", "Jeromy Quitzon"], ["title", "Real-Estate Planner"], ["phone", "740-481-5454"], ["email", "tijuana.legros@weimann.co"], ["created_at", "2020-01-29 17:25:51.189950"], ["updated_at", "2020-01-29 17:25:51.189950"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 17], ["name", "Laurine Keebler I"], ["title", "Sales Designer"], ["phone", "896-540-3149"], ["email", "demetrius@nitzsche.name"], ["created_at", "2020-01-29 17:25:51.194642"], ["updated_at", "2020-01-29 17:25:51.194642"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 22], ["name", "Britta Schuppe"], ["title", "Investor Developer"], ["phone", "195-217-3539"], ["email", "randal@nicolashackett.net"], ["created_at", "2020-01-29 17:25:51.198812"], ["updated_at", "2020-01-29 17:25:51.198812"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 11], ["name", "Erik Heller"], ["title", "Manufacturing Director"], ["phone", "(338) 717-5332"], ["email", "guillermo@klein.io"], ["created_at", "2020-01-29 17:25:51.202822"], ["updated_at", "2020-01-29 17:25:51.202822"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 3], ["name", "Cecil Stracke IV"], ["title", "District Administration Liaison"], ["phone", "516-157-6536"], ["email", "trang.kozey@jerde.org"], ["created_at", "2020-01-29 17:25:51.207018"], ["updated_at", "2020-01-29 17:25:51.207018"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 9], ["name", "Vaughn Maggio DDS"], ["title", "Real-Estate Manager"], ["phone", "1-444-980-6196"], ["email", "eli_howell@nader.biz"], ["created_at", "2020-01-29 17:25:51.211177"], ["updated_at", "2020-01-29 17:25:51.211177"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 18], ["name", "Iona Schuster"], ["title", "Central Real-Estate Specialist"], ["phone", "207-481-8925"], ["email", "marion@kling.com"], ["created_at", "2020-01-29 17:25:51.215718"], ["updated_at", "2020-01-29 17:25:51.215718"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 8], ["name", "Leo Rutherford DVM"], ["title", "Global Hospitality Administrator"], ["phone", "1-739-950-7157"], ["email", "inocencia@lubowitz.biz"], ["created_at", "2020-01-29 17:25:51.219834"], ["updated_at", "2020-01-29 17:25:51.219834"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 4], ["name", "Cary Klocko"], ["title", "Manufacturing Producer"], ["phone", "257.031.2716"], ["email", "orpha_bergstrom@armstrong.com"], ["created_at", "2020-01-29 17:25:51.224050"], ["updated_at", "2020-01-29 17:25:51.224050"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 17], ["name", "Shanda Nikolaus"], ["title", "Lead Consulting Developer"], ["phone", "(410) 431-8312"], ["email", "asia@hauck.info"], ["created_at", "2020-01-29 17:25:51.228312"], ["updated_at", "2020-01-29 17:25:51.228312"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 10], ["name", "Cecil Rosenbaum"], ["title", "Accounting Director"], ["phone", "446.530.3862"], ["email", "quinton@muller.io"], ["created_at", "2020-01-29 17:25:51.232266"], ["updated_at", "2020-01-29 17:25:51.232266"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 6], ["name", "Devin O'Conner"], ["title", "Advertising Producer"], ["phone", "368-798-5107"], ["email", "cheryll@schmitt.io"], ["created_at", "2020-01-29 17:25:51.236202"], ["updated_at", "2020-01-29 17:25:51.236202"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 22], ["name", "Nenita Goldner"], ["title", "Legacy Supervisor"], ["phone", "937-550-2532"], ["email", "fransisca@stoltenbergdickens.com"], ["created_at", "2020-01-29 17:25:51.240170"], ["updated_at", "2020-01-29 17:25:51.240170"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 17], ["name", "Rich Keebler Jr."], ["title", "Senior Liaison"], ["phone", "964-614-8986"], ["email", "yajaira@kohler.name"], ["created_at", "2020-01-29 17:25:51.244226"], ["updated_at", "2020-01-29 17:25:51.244226"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 4], ["name", "Beckie Kiehn"], ["title", "Design Associate"], ["phone", "140.988.5856"], ["email", "warren@champlinkuvalis.org"], ["created_at", "2020-01-29 17:25:51.248270"], ["updated_at", "2020-01-29 17:25:51.248270"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 15], ["name", "Estela McCullough DDS"], ["title", "Legacy Engineer"], ["phone", "475.434.3630"], ["email", "racquel@boyer.info"], ["created_at", "2020-01-29 17:25:51.252023"], ["updated_at", "2020-01-29 17:25:51.252023"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 15], ["name", "Jeff Hyatt DDS"], ["title", "Direct Orchestrator"], ["phone", "(635) 219-7476"], ["email", "mika@loweheller.org"], ["created_at", "2020-01-29 17:25:51.255713"], ["updated_at", "2020-01-29 17:25:51.255713"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 7], ["name", "Lisha Graham"], ["title", "Customer Retail Executive"], ["phone", "1-596-532-2283"], ["email", "annis@dooleyhuel.com"], ["created_at", "2020-01-29 17:25:51.259815"], ["updated_at", "2020-01-29 17:25:51.259815"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 14], ["name", "Teodoro Leffler"], ["title", "Chief Advertising Architect"], ["phone", "(723) 596-4656"], ["email", "trisha@king.name"], ["created_at", "2020-01-29 17:25:51.264227"], ["updated_at", "2020-01-29 17:25:51.264227"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 2], ["name", "Dr. Brant Wiza"], ["title", "Regional Assistant"], ["phone", "1-454-316-4321"], ["email", "woodrow@west.org"], ["created_at", "2020-01-29 17:25:51.268971"], ["updated_at", "2020-01-29 17:25:51.268971"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 23], ["name", "Tiana Glover III"], ["title", "Forward Coordinator"], ["phone", "623-778-8229"], ["email", "cira@paucek.com"], ["created_at", "2020-01-29 17:25:51.273676"], ["updated_at", "2020-01-29 17:25:51.273676"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 18], ["name", "Tien Will"], ["title", "Senior Farming Orchestrator"], ["phone", "223.109.2888"], ["email", "bernie@dietrichcole.biz"], ["created_at", "2020-01-29 17:25:51.277877"], ["updated_at", "2020-01-29 17:25:51.277877"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.4ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 1], ["name", "Clifton Emmerich"], ["title", "Future Government Manager"], ["phone", "1-739-687-1099"], ["email", "samira@aufderhar.io"], ["created_at", "2020-01-29 17:25:51.282633"], ["updated_at", "2020-01-29 17:25:51.282633"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 18], ["name", "Christinia Friesen DDS"], ["title", "Community-Services Assistant"], ["phone", "(290) 506-6203"], ["email", "kiyoko_mueller@schaeferreynolds.net"], ["created_at", "2020-01-29 17:25:51.287628"], ["updated_at", "2020-01-29 17:25:51.287628"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mContact Create (0.3ms)[0m  [1m[32mINSERT INTO "contacts" ("account_id", "name", "title", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["account_id", 20], ["name", "Tanner Zboncak"], ["title", "District Retail Orchestrator"], ["phone", "263.355.0772"], ["email", "santina@feil.name"], ["created_at", "2020-01-29 17:25:51.292068"], ["updated_at", "2020-01-29 17:25:51.292068"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-01-29 12:26:46 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/lukewaring/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/lukewaring/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.7ms | Allocations: 316)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 1603)
+
+
+Started GET "/users" for ::1 at 2020-01-29 12:27:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users" for ::1 at 2020-01-29 12:27:17 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::V1::UsersController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.1.2) lib/rack/etag.rb:27:in `call'
+rack (2.1.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.2) lib/rack/head.rb:14:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/users" for ::1 at 2020-01-29 12:28:00 -0500
+Processing by Api::V1::UsersController#index as HTML
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 474)
+
+
+Started GET "/api/v1/users" for ::1 at 2020-01-29 12:28:27 -0500
+Processing by Api::V1::UsersController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 39)
+
+
+Started GET "/api/v1/users" for ::1 at 2020-01-29 12:30:35 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 8.2ms | Allocations: 5295)
+
+
+Started GET "/api/v1/accounts" for ::1 at 2020-01-29 12:31:43 -0500
+Processing by Api::V1::AccountsController#index as HTML
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 12.4ms | ActiveRecord: 8.0ms | Allocations: 8287)
+
+
+Started GET "/api/v1/activites" for ::1 at 2020-01-29 12:37:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/activites"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/activities" for ::1 at 2020-01-29 12:37:56 -0500
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (1.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 7.7ms | Allocations: 1728)
+
+
+Started GET "/api/v1/contact_activities" for ::1 at 2020-01-29 12:38:07 -0500
+Processing by Api::V1::ContactActivitiesController#index as HTML
+  [1m[36mContactActivity Load (0.8ms)[0m  [1m[34mSELECT "contact_activities".* FROM "contact_activities"[0m
+  ↳ app/controllers/api/v1/contact_activities_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 4.3ms | Allocations: 1327)
+
+
+Started GET "/api/v1/contact_opportunities" for ::1 at 2020-01-29 12:38:14 -0500
+Processing by Api::V1::ContactOpportunitiesController#index as HTML
+  [1m[36mContactOpportunity Load (0.8ms)[0m  [1m[34mSELECT "contact_opportunities".* FROM "contact_opportunities"[0m
+  ↳ app/controllers/api/v1/contact_opportunities_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 3.8ms | Allocations: 1322)
+
+
+Started GET "/api/v1/opportunities" for ::1 at 2020-01-29 12:38:21 -0500
+Processing by Api::V1::OpportunitiesController#index as HTML
+  [1m[36mOpportunity Load (1.2ms)[0m  [1m[34mSELECT "opportunities".* FROM "opportunities"[0m
+  ↳ app/controllers/api/v1/opportunities_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 4.6ms | Allocations: 1591)
+
+
+Started GET "/api/v1/users" for ::1 at 2020-01-29 12:38:26 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+Completed 200 OK in 22ms (Views: 9.2ms | ActiveRecord: 11.9ms | Allocations: 4652)
+
+

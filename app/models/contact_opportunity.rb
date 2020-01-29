@@ -1,0 +1,2 @@
+class ContactOpportunity < ApplicationRecord
+end
