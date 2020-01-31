@@ -7,7 +7,12 @@ class Api::V1::AccountsController < ApplicationController
 
     def create
         account = Account.create(account_params)
-        render json: :account, except: [:created_at, :updated_at]
+        render json: account, except: [:created_at, :updated_at]
+    end
+
+    def update
+        account = Account.find(params[:id])
+        account.update(account_params)
     end
 
     def show
@@ -23,7 +28,7 @@ class Api::V1::AccountsController < ApplicationController
     private
 
     def account_params
-        params.require(:account).permit(:id, :name, :industry, :website, :notes, :contacts, :opportunities, :activities, :user)
+        params.require(:account).permit(:id, :user_id, :name, :industry, :website, :notes, :contacts, :opportunities, :activities, :user)
     end
 
 end
