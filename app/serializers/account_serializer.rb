@@ -1,3 +1,3 @@
 class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :name, :website, :notes, :contacts
+  attributes :id, :name, :industry, :website, :notes, :contacts, :opportunities, :activities, :user
 end
