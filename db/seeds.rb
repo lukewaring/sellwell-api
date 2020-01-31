@@ -25,12 +25,12 @@
 #   )
 # end
 
-25.times do
-    Contact.create(
-      account_id: (1...25).to_a.sample,
-      name: Faker::Name.name,
-      title: Faker::Job.title,
-      phone: Faker::PhoneNumber.cell_phone,
-      email: Faker::Internet.email
-    )
-  end
+# 25.times do
+#     Contact.create(
+#       account_id: (1...25).to_a.sample,
+#       name: Faker::Name.name,
+#       title: Faker::Job.title,
+#       phone: Faker::PhoneNumber.cell_phone,
+#       email: Faker::Internet.email
+#     )
+#   end
