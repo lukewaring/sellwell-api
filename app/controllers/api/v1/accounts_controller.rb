@@ -13,6 +13,12 @@ class Api::V1::AccountsController < ApplicationController
     def update
         account = Account.find(params[:id])
         account.update(account_params)
+        render json: account, except: [:created_at, :updated_at]
+    end
+
+    def destroy
+        account = Account.find(params[:id])
+        account.destroy
     end
 
     def show
