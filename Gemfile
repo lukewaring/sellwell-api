@@ -43,3 +43,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Provides an authentication solution based on JSON Web Tokens
 gem 'knock'
+
+gem 'jwt'
