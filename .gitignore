@@ -1,11 +1,10 @@
-# All logfiles and tempfiles
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 
-# master.key
 config/master.key
 
-# Byebug command history file
 .byebug_history
+
+.DS_Store
