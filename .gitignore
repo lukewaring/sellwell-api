@@ -7,18 +7,5 @@
 # master.key
 config/master.key
 
-# dotenv, dotenv-rails
-.env
-.env.*
-
-## Environment normalization
-/.bundle
-/vendor/bundle
-
 # Byebug command history file
 .byebug_history
-
-# Uploaded files in development
-/storage/*
-!/storage/.keep
-/public/uploads
