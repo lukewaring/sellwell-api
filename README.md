@@ -6,7 +6,7 @@
 
 ## Rationale
 
-- Most customer relationship management (CRM) software is made for large businesses
+- Most customer relationship management (CRM) software is built for large businesses
 - CRMs include dozens of features that freelancers and solo consultants do not need
 - Excess features create a cluttered UI that leads to lower user adoption and satisfaction
 - Sellwell provides just enough functionality to make the sales process easy and efficient for freelancers and solo consultants
